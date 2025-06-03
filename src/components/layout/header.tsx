@@ -21,19 +21,19 @@ export default function Header() {
           <Button variant="ghost" asChild>
             <Link href="/professionals" className="flex items-center gap-1 text-xs sm:text-sm">
               <Users className="h-4 w-4" />
-              <span className="hidden md:inline">Professionals</span>
+              <span className="hidden md:inline">Profesionales</span>
             </Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="/summarize" className="flex items-center gap-1 text-xs sm:text-sm">
               <FileText className="h-4 w-4" />
-              <span className="hidden md:inline">Summarize</span>
+              <span className="hidden md:inline">Resumir</span>
             </Link>
           </Button>
            <Button variant="outline" size="sm" asChild className="border-primary text-primary hover:bg-primary/10 text-xs sm:text-sm">
             <Link href="/#"> {/* Placeholder: actual link TBD for login/dashboard */}
               <Briefcase className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
-              Dashboard
+              Panel
             </Link>
           </Button>
         </nav>

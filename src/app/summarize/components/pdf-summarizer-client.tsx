@@ -36,13 +36,13 @@ export default function PdfSummarizerClient() {
   const processFile = (selectedFile: File | null) => {
     if (selectedFile) {
       if (selectedFile.type !== 'application/pdf') {
-        setError('Invalid file type. Please upload a PDF.');
+        setError('Tipo de archivo no válido. Por favor, sube un PDF.');
         resetState();
         setFile(null); // Explicitly nullify
         return false;
       }
       if (selectedFile.size > 10 * 1024 * 1024) { // 10MB limit
-        setError('File is too large. Maximum size is 10MB.');
+        setError('El archivo es demasiado grande. El tamaño máximo es 10MB.');
         resetState();
         setFile(null); // Explicitly nullify
         return false;
@@ -100,7 +100,7 @@ export default function PdfSummarizerClient() {
 
   const handleSubmit = async () => {
     if (!file) {
-      setError('Please select a PDF file first.');
+      setError('Por favor, selecciona primero un archivo PDF.');
       return;
     }
 
@@ -119,18 +119,18 @@ export default function PdfSummarizerClient() {
           const result = await summarizePdf(input);
           setSummary(result.summary);
           toast({
-            title: 'Summary Generated!',
-            description: 'The PDF has been successfully summarized.',
+            title: '¡Resumen Generado!',
+            description: 'El PDF ha sido resumido exitosamente.',
             variant: 'default',
             action: <CheckCircle className="text-green-500" />,
           });
         } catch (apiError: any) {
           console.error('Error summarizing PDF:', apiError);
-          const errorMessage = apiError.message || 'Unknown error during summarization.';
-          setError(`Failed to summarize PDF: ${errorMessage}`);
+          const errorMessage = apiError.message || 'Error desconocido durante el resumen.';
+          setError(`Falló al resumir el PDF: ${errorMessage}`);
           toast({
-            title: 'Error Summarizing',
-            description: `Could not summarize the PDF. ${errorMessage}`,
+            title: 'Error al Resumir',
+            description: `No se pudo resumir el PDF. ${errorMessage}`,
             variant: 'destructive',
             action: <AlertTriangle className="text-red-500" />,
           });
@@ -140,21 +140,21 @@ export default function PdfSummarizerClient() {
       };
       reader.onerror = (errorEvent) => {
         console.error('Error reading file:', errorEvent);
-        setError('Failed to read the file.');
+        setError('Falló al leer el archivo.');
         setIsLoading(false);
         toast({
-            title: 'File Read Error',
-            description: 'Could not read the selected file. Please try again.',
+            title: 'Error al Leer Archivo',
+            description: 'No se pudo leer el archivo seleccionado. Por favor, inténtalo de nuevo.',
             variant: 'destructive',
         });
       };
     } catch (e: any) {
       console.error('General error:', e);
-      setError(`An unexpected error occurred: ${e.message || 'Unknown error'}`);
+      setError(`Ocurrió un error inesperado: ${e.message || 'Error desconocido'}`);
       setIsLoading(false);
       toast({
-        title: 'Unexpected Error',
-        description: 'An unexpected error occurred during the process. Please try again.',
+        title: 'Error Inesperado',
+        description: 'Ocurrió un error inesperado durante el proceso. Por favor, inténtalo de nuevo.',
         variant: 'destructive',
       });
     }
@@ -172,9 +172,9 @@ export default function PdfSummarizerClient() {
         <label htmlFor="pdf-upload" className="flex flex-col items-center justify-center space-y-2 cursor-pointer">
             <FileUp className={`mx-auto h-12 w-12 ${isDragging ? 'text-primary' : 'text-muted-foreground'}`} />
             <p className="text-sm text-muted-foreground">
-              <span className={`font-medium ${isDragging ? 'text-primary' : 'text-primary hover:text-primary/80'}`}>Click to upload</span> or drag and drop
+              <span className={`font-medium ${isDragging ? 'text-primary' : 'text-primary hover:text-primary/80'}`}>Haz clic para subir</span> o arrastra y suelta
             </p>
-            <p className="text-xs text-muted-foreground">PDF only, max 10MB</p>
+            <p className="text-xs text-muted-foreground">Solo PDF, máx 10MB</p>
         </label>
       </div>
 
@@ -183,10 +183,10 @@ export default function PdfSummarizerClient() {
           <CardContent className="p-3">
             <div className="flex items-center gap-2 text-sm text-green-700">
               <FileIcon className="h-5 w-5" />
-              <span>Selected: {fileName}</span>
+              <span>Seleccionado: {fileName}</span>
             </div>
             {uploadProgress < 100 && uploadProgress > 0 && !isLoading && <Progress value={uploadProgress} className="w-full h-1.5 mt-2 bg-green-200" indicatorClassName="bg-green-600" />}
-            {uploadProgress === 100 && !isLoading && <p className="text-xs text-green-600 mt-1">Ready to summarize.</p>}
+            {uploadProgress === 100 && !isLoading && <p className="text-xs text-green-600 mt-1">Listo para resumir.</p>}
           </CardContent>
         </Card>
       )}
@@ -210,12 +210,12 @@ export default function PdfSummarizerClient() {
         {isLoading ? (
           <>
             <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-            Summarizing...
+            Resumiendo...
           </>
         ) : (
           <>
             <Sparkles className="mr-2 h-5 w-5" />
-            Generate Summary
+            Generar Resumen
           </>
         )}
       </Button>
@@ -225,7 +225,7 @@ export default function PdfSummarizerClient() {
           <CardHeader>
             <CardTitle className="text-xl font-headline text-primary flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-accent" />
-              Generated Summary
+              Resumen Generado
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -234,7 +234,7 @@ export default function PdfSummarizerClient() {
               readOnly
               rows={12}
               className="bg-muted/30 border-border focus-visible:ring-primary text-base leading-relaxed"
-              aria-label="Generated PDF Summary"
+              aria-label="Resumen de PDF Generado"
             />
           </CardContent>
         </Card>

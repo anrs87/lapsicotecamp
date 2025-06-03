@@ -32,8 +32,8 @@ export function ResourceCard({ resource }: ResourceCardProps) {
     // For now, simulate with a toast message and console log.
     console.log(`Initiating purchase for "${resource.title}" (ID: ${resource.id}) via Mercado Pago.`);
     toast({
-      title: "Purchase Simulation",
-      description: `Redirecting to Mercado Pago for "${resource.title}". Your content will be available after payment.`,
+      title: "Simulación de Compra",
+      description: `Redirigiendo a Mercado Pago para "${resource.title}". Tu contenido estará disponible después del pago.`,
       duration: 5000,
     });
     // Example redirect (replace with actual Mercado Pago integration)
@@ -61,7 +61,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
             {resource.title}
           </Link>
         </CardTitle>
-        <p className="text-xs text-muted-foreground mb-2">By {resource.author}</p>
+        <p className="text-xs text-muted-foreground mb-2">Por {resource.author}</p>
         <div className="flex items-center text-xs text-accent mb-3">
           <Tag className="h-3 w-3 mr-1" />
           <span>{resource.category}</span>
@@ -72,12 +72,12 @@ export function ResourceCard({ resource }: ResourceCardProps) {
         <Button variant="outline" size="sm" asChild className="flex-1 sm:flex-initial border-primary text-primary hover:bg-primary/10">
           <Link href={`/marketplace/resource/${resource.id}`}> {/* Placeholder link */}
             <Info className="mr-2 h-4 w-4" />
-            Details
+            Detalles
           </Link>
         </Button>
         <Button size="sm" onClick={handlePurchase} className="flex-1 sm:flex-initial bg-accent hover:bg-accent/90 text-accent-foreground">
           <ShoppingCart className="mr-2 h-4 w-4" />
-          Buy Now
+          Comprar Ahora
         </Button>
       </CardFooter>
     </Card>

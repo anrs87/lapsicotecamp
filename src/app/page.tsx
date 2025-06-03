@@ -9,62 +9,62 @@ export default function HomePage() {
   return (
     <div className="space-y-12">
       <section className="text-center py-12 bg-gradient-to-br from-primary/10 via-background to-accent/10 rounded-xl shadow-lg">
-        <h1 className="text-4xl sm:text-5xl font-headline font-bold text-primary mb-4">Welcome to PsiConnect</h1>
+        <h1 className="text-4xl sm:text-5xl font-headline font-bold text-primary mb-4">Bienvenido a PsiConnect</h1>
         <p className="text-lg sm:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto px-4">
-          Your premier platform for mental health resources, professional networking, and AI-powered tools.
+          Tu plataforma principal para recursos de salud mental, networking profesional y herramientas impulsadas por IA.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
           <Button size="lg" asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link href="/marketplace">
-              Explore Resources <ArrowRight className="ml-2 h-5 w-5" />
+              Explorar Recursos <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild className="border-accent text-accent hover:bg-accent/10">
             <Link href="/professionals">
-              Find Professionals <ArrowRight className="ml-2 h-5 w-5" />
+              Encontrar Profesionales <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>
       </section>
 
       <section>
-        <h2 className="text-3xl font-headline font-semibold text-center mb-8 text-primary">Key Features</h2>
+        <h2 className="text-3xl font-headline font-semibold text-center mb-8 text-primary">Características Principales</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <FeatureCard
             icon={<BookOpen className="h-10 w-10 text-accent" />}
-            title="Resource Marketplace"
-            description="Browse and purchase a wide array of digital resources, from e-books to therapy guides, curated by experts."
+            title="Marketplace de Recursos"
+            description="Navega y compra una amplia gama de recursos digitales, desde libros electrónicos hasta guías de terapia, seleccionados por expertos."
             link="/marketplace"
-            linkText="Visit Marketplace"
+            linkText="Visitar Marketplace"
           />
           <FeatureCard
             icon={<Users className="h-10 w-10 text-accent" />}
-            title="Professional Profiles"
-            description="Connect with mental health professionals, view their expertise, and access their shared resources."
+            title="Perfiles Profesionales"
+            description="Conecta con profesionales de la salud mental, visualiza su experiencia y accede a sus recursos compartidos."
             link="/professionals"
-            linkText="View Professionals"
+            linkText="Ver Profesionales"
           />
           <FeatureCard
             icon={<FileText className="h-10 w-10 text-accent" />}
-            title="PDF Summarization"
-            description="Utilize our AI-powered tool to quickly summarize lengthy PDF documents, saving you time and effort."
+            title="Resumen de PDF"
+            description="Utiliza nuestra herramienta impulsada por IA para resumir rápidamente documentos PDF extensos, ahorrándote tiempo y esfuerzo."
             link="/summarize"
-            linkText="Try Summarizer"
+            linkText="Probar Resumidor"
           />
         </div>
       </section>
       
       <section className="text-center py-12 bg-card rounded-xl shadow-lg">
-         <h2 className="text-3xl font-headline font-semibold text-primary mb-4">Secure & Streamlined Payments</h2>
+         <h2 className="text-3xl font-headline font-semibold text-primary mb-4">Pagos Seguros y Simplificados</h2>
          <div className="flex justify-center mb-4">
-            <Image src="https://placehold.co/300x60.png" alt="Payment Gateway Logos" width={300} height={60} data-ai-hint="payment logos" />
+            <Image src="https://placehold.co/300x60.png" alt="Logos de pasarelas de pago" width={300} height={60} data-ai-hint="payment logos" />
          </div>
          <p className="text-lg text-foreground/80 mb-6 max-w-xl mx-auto px-4">
-           Transactions are handled securely via Mercado Pago. Purchased content is available immediately after payment validation.
+           Las transacciones se manejan de forma segura a través de Mercado Pago. El contenido comprado está disponible inmediatamente después de la validación del pago.
          </p>
          <Button variant="link" className="text-accent hover:text-accent/80" asChild>
            <Link href="/#"> {/* Placeholder link for payment info */}
-            Learn more about our payment process <ArrowRight className="ml-1 h-4 w-4" />
+            Más información sobre nuestro proceso de pago <ArrowRight className="ml-1 h-4 w-4" />
            </Link>
          </Button>
       </section>

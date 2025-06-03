@@ -11,9 +11,9 @@ export default function SummarizePage() {
           <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4 shadow-sm">
             <FileText className="h-10 w-10 text-primary" />
           </div>
-          <CardTitle className="text-3xl font-headline text-primary">AI PDF Summarizer</CardTitle>
+          <CardTitle className="text-3xl font-headline text-primary">Resumidor de PDF con IA</CardTitle>
           <CardDescription className="text-lg text-foreground/80 px-4">
-            Upload your PDF document (up to 10MB) and let our AI provide a concise summary, saving you valuable time.
+            Sube tu documento PDF (hasta 10MB) y deja que nuestra IA proporcione un resumen conciso, ahorrándote tiempo valioso.
           </CardDescription>
         </CardHeader>
         <CardContent className="px-4 sm:px-6 pb-6">
@@ -23,17 +23,17 @@ export default function SummarizePage() {
        <Card className="bg-accent/10 border-accent/30 shadow-md">
         <CardHeader>
           <CardTitle className="text-xl font-headline text-accent flex items-center">
-            <UploadCloud className="mr-2 h-6 w-6" /> How it Works
+            <UploadCloud className="mr-2 h-6 w-6" /> Cómo Funciona
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-2 text-foreground/90">
-          <p>1. Click or drag a PDF file (max 10MB) into the upload area.</p>
-          <p>2. Our AI will process the document. This may take a moment, especially for larger files.</p>
-          <p>3. Review the generated summary below the upload form.</p>
+          <p>1. Haz clic o arrastra un archivo PDF (máx 10MB) al área de carga.</p>
+          <p>2. Nuestra IA procesará el documento. Esto puede tardar un momento, especialmente con archivos grandes.</p>
+          <p>3. Revisa el resumen generado debajo del formulario de carga.</p>
           <div className="flex items-start text-sm text-muted-foreground pt-3 mt-3 border-t border-accent/20">
             <AlertTriangle className="h-4 w-4 mr-2 mt-0.5 text-amber-500 shrink-0" />
             <p>
-            For best results, please ensure your PDF is text-based. Scanned image-only PDFs may not be processable by the AI.
+            Para mejores resultados, asegúrate de que tu PDF esté basado en texto. Los PDF escaneados que solo contienen imágenes podrían no ser procesables por la IA.
             </p>
           </div>
         </CardContent>

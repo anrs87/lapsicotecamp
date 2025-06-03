@@ -21,11 +21,11 @@ interface Professional {
 const mockProfessionals: Professional[] = [
   {
     id: 'dr-anya-sharma',
-    name: 'Dr. Anya Sharma',
-    specialty: 'Clinical Psychologist, Mindfulness Expert',
+    name: 'Dra. Anya Sharma',
+    specialty: 'Psicóloga Clínica, Experta en Mindfulness',
     imageUrl: 'https://placehold.co/100x100.png',
     imageHint: 'professional woman smiling',
-    bioExcerpt: 'Specializes in CBT and mindfulness-based stress reduction. Over 10 years of experience helping clients achieve mental wellness and build resilience.',
+    bioExcerpt: 'Se especializa en TCC y reducción del estrés basada en mindfulness. Más de 10 años de experiencia ayudando a clientes a alcanzar el bienestar mental y construir resiliencia.',
     rating: 4.9,
     experienceYears: 10,
     verified: true,
@@ -33,32 +33,32 @@ const mockProfessionals: Professional[] = [
   {
     id: 'prof-kenji-tanaka',
     name: 'Prof. Kenji Tanaka',
-    specialty: 'Cognitive Behavioral Therapist',
+    specialty: 'Terapeuta Cognitivo-Conductual',
     imageUrl: 'https://placehold.co/100x100.png',
     imageHint: 'professional man glasses',
-    bioExcerpt: 'Expert in treating anxiety disorders and depression using evidence-based CBT techniques. Published author and researcher in clinical psychology.',
+    bioExcerpt: 'Experto en el tratamiento de trastornos de ansiedad y depresión usando técnicas de TCC basadas en evidencia. Autor publicado e investigador en psicología clínica.',
     rating: 4.8,
     experienceYears: 15,
     verified: true,
   },
   {
     id: 'dr-laura-evans',
-    name: 'Dr. Laura Evans',
-    specialty: 'Child Psychologist, ADHD Specialist',
+    name: 'Dra. Laura Evans',
+    specialty: 'Psicóloga Infantil, Especialista en TDAH',
     imageUrl: 'https://placehold.co/100x100.png',
     imageHint: 'therapist friendly',
-    bioExcerpt: 'Dedicated to supporting children with ADHD and their families. Provides practical strategies for behavioral management and academic success.',
+    bioExcerpt: 'Dedicada a apoyar a niños con TDAH y sus familias. Proporciona estrategias prácticas para el manejo conductual y el éxito académico.',
     rating: 4.7,
     experienceYears: 8,
     verified: true,
   },
    {
     id: 'mr-alex-chen',
-    name: 'Mr. Alex Chen',
-    specialty: 'Licensed Counselor, Relationship Coach',
+    name: 'Sr. Alex Chen',
+    specialty: 'Consejero Licenciado, Coach de Relaciones',
     imageUrl: 'https://placehold.co/100x100.png',
     imageHint: 'counselor thoughtful',
-    bioExcerpt: 'Focuses on couples therapy and individual counseling for relationship issues. Uses an integrative approach tailored to client needs.',
+    bioExcerpt: 'Se enfoca en terapia de pareja y consejería individual para problemas de relación. Utiliza un enfoque integrador adaptado a las necesidades del cliente.',
     rating: 4.6,
     experienceYears: 7,
     verified: false, // Example of not verified
@@ -69,16 +69,16 @@ export default function ProfessionalsPage() {
   return (
     <div className="space-y-8">
       <section className="bg-card p-6 rounded-lg shadow-md">
-        <h1 className="text-4xl font-headline font-bold text-primary mb-2">Find a Professional</h1>
-        <p className="text-lg text-muted-foreground mb-6">Connect with experienced mental health professionals and access their expertise.</p>
+        <h1 className="text-4xl font-headline font-bold text-primary mb-2">Encontrar un Profesional</h1>
+        <p className="text-lg text-muted-foreground mb-6">Conecta con profesionales de la salud mental experimentados y accede a su pericia.</p>
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="relative flex-grow">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-            <Input type="search" placeholder="Search by name, specialty, or keyword..." className="pl-10 w-full" />
+            <Input type="search" placeholder="Buscar por nombre, especialidad o palabra clave..." className="pl-10 w-full" />
           </div>
           <Button variant="outline" className="flex items-center gap-2 shrink-0">
             <Filter className="h-5 w-5" />
-            Filter by Specialty
+            Filtrar por Especialidad
           </Button>
         </div>
       </section>
@@ -110,7 +110,7 @@ function ProfessionalCard({ professional }: { professional: Professional }) {
           {professional.verified && (
             <div className="flex items-center text-xs text-green-600 mt-1">
               <UserCheck className="h-3.5 w-3.5 mr-1" />
-              Verified Professional
+              Profesional Verificado
             </div>
           )}
         </div>
@@ -118,14 +118,14 @@ function ProfessionalCard({ professional }: { professional: Professional }) {
       <CardContent className="p-4 pt-0 flex-grow">
         <CardDescription className="text-sm text-foreground/80 mb-3 line-clamp-3">{professional.bioExcerpt}</CardDescription>
         <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
-            <span className="flex items-center"><Award className="h-3.5 w-3.5 mr-1 text-amber-500" /> {professional.rating}/5.0 Rating</span>
-            <span className="flex items-center"><CalendarDays className="h-3.5 w-3.5 mr-1 text-blue-500" /> {professional.experienceYears} yrs exp.</span>
+            <span className="flex items-center"><Award className="h-3.5 w-3.5 mr-1 text-amber-500" /> {professional.rating}/5.0 Valoración</span>
+            <span className="flex items-center"><CalendarDays className="h-3.5 w-3.5 mr-1 text-blue-500" /> {professional.experienceYears} años exp.</span>
         </div>
       </CardContent>
       <CardFooter className="p-4 border-t mt-auto">
         <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
           <Link href={`/professionals/${professional.id}`}>
-            View Profile <Briefcase className="ml-2 h-4 w-4" />
+            Ver Perfil <Briefcase className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </CardFooter>
