@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
-import { Toaster } from '@/components/ui/toaster'; // Esta es una importación con alias, que tu tsconfig debería manejar
-// ¡CORRECCIÓN IMPORTANTE AQUÍ! Asegúrate de que esta ruta relativa sea PERFECTA
-// Si Header.tsx está en src/components/layout/Header.tsx, y layout.tsx está en src/app/,
-// entonces necesitas subir un nivel (..) y luego bajar a components/layout/Header.
+import { Toaster } from '@/components/ui/toaster'; // Esto aún usa alias, pero suele ser menos problemático para componentes UI
+
+// ¡SOLUCIÓN CRÍTICA PARA EL ERROR DE COMPILACIÓN!
+// Usamos rutas relativas directas para Header y Footer.
+// ASEGÚRATE que estos paths coincidan EXACTAMENTE con la ubicación y capitalización de tus archivos.
+// Si tu archivo es 'src/components/layout/Header.tsx'
 import Header from '../components/layout/Header';
-import Footer from '@/components/layout/footer'; // Asumiendo que footer.tsx existe en minúsculas
+// Si tu archivo es 'src/components/layout/Footer.tsx'
+import Footer from '../components/layout/Footer'; // Asegúrate que 'Footer' sea con F mayúscula
+
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -36,6 +40,7 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
 
