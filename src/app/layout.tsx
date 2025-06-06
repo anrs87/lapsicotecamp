@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
-import { Toaster } from '@/components/ui/toaster';
-// ¡CORRECCIÓN IMPORTANTE AQUÍ! Cambiada la ruta de importación a relativa
+import { Toaster } from '@/components/ui/toaster'; // Esta es una importación con alias, que tu tsconfig debería manejar
+// ¡CORRECCIÓN IMPORTANTE AQUÍ! Asegúrate de que esta ruta relativa sea PERFECTA
+// Si Header.tsx está en src/components/layout/Header.tsx, y layout.tsx está en src/app/,
+// entonces necesitas subir un nivel (..) y luego bajar a components/layout/Header.
 import Header from '../components/layout/Header';
 import Footer from '@/components/layout/footer'; // Asumiendo que footer.tsx existe en minúsculas
 import './globals.css';
@@ -34,5 +36,6 @@ export default function RootLayout({
     </html>
   );
 }
+
 
 
