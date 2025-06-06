@@ -1,8 +1,8 @@
-
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
+// IMPORTANTE: Asegúrate que 'Header' (con H mayúscula) en el path coincida con el nombre del archivo Header.tsx
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/footer'; // Asumiendo que footer.tsx existe en minúsculas
 import './globals.css';
 
 export const metadata: Metadata = {
