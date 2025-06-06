@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
-// IMPORTANTE: Asegúrate que 'Header' (con H mayúscula) en el path coincida con el nombre del archivo Header.tsx
-import Header from '@/components/layout/Header';
+// ¡CORRECCIÓN IMPORTANTE AQUÍ! Cambiada la ruta de importación a relativa
+import Header from '../components/layout/Header';
 import Footer from '@/components/layout/footer'; // Asumiendo que footer.tsx existe en minúsculas
 import './globals.css';
 
@@ -34,3 +34,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+
